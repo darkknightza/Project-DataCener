@@ -11,7 +11,7 @@
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
         <a class="nav-link" href="index.html">
           <i class="fa fa-fw fa-dashboard"></i>
-          <span class="nav-link-text">บันทึกการลา</span>
+          <span class="nav-link-text">ขออนุมัติเดินทาง</span>
         </a>
       </li>
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
@@ -250,7 +250,12 @@
         <form>
           <div class="form-group">
             <div class="form-row">
-              <div class="col-md-12">
+                <div class="col-md-6">
+                    <label for="exampleInputName">เขียนที่:</label>
+                    <input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="" value="คณะวิทยาศาสตร์ "
+                      readonly="readonly">
+                  </div>
+              <div class="col-md-6">
                 <label for="exampleInputName">ส่วนงาน:</label>
                 <input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="" value="คณะวิทยาศาสตร์ "
                   readonly="readonly">
@@ -259,14 +264,14 @@
           </div>
           <div class="form-group">
             <div class="form-row">
-              <div class="col-md-6">
+              <div class="col-md-8">
                 <label for="exampleInputName">เรื่อง:</label>
-                <input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="" value="แจ้งวันออกเดินทางไปราชการ ณ ต่างประเทศ "
+                <input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="" value="ขออนุมัติเดินทางไปปฏิบัติงาน ณ ต่างประเทศ (และจัดทำ E-Passport และ/หรือ VISA)"
                   readonly="readonly">
               </div>
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <label for="exampleInputName">เรียน:</label>
-                <input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="" value="คณบดี/ผู้บังคับบัญชา"
+                <input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="" value="อธิการบดี"
                   readonly="readonly">
               </div>
             </div>
@@ -279,12 +284,7 @@
               </div>
               <div class="col-md-6">
                 <label for="exampleInputName">ประเภท:</label>
-                <select class="form-control">
-                  <option>ข้าราชการ</option>
-                  <option>พนักงานมหาวิทยาลัย</option>
-                  <option>พนักงานราชการ</option>
-                  <option>ลูกจ้างประจำ</option>
-                </select>
+                <input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="" value="พนักงานมหาวิทยาลัย" readonly="readonly">
               </div>
             </div>
           </div>
@@ -318,7 +318,7 @@
             <div class="form-row">
               <div class="col-md-12">
                 <label for="exampleConfirmPassword">มีความประสงค์จะขออนุมัติเดินทางไปปฏิบัติงาน ณ ต่างประเทศ เพื่อ</label>
-                <input class="form-control" id="exampleConfirmPassword" type="text" placeholder="" row="5">
+                <textarea class="form-control" rows="2" required></textarea>
               </div>
             </div>
           </div>
@@ -326,19 +326,28 @@
             <div class="form-row">
               <div class="col-md-12">
                 <label for="exampleConfirmPassword">ประเทศ</label>
-                <input class="form-control" id="exampleConfirmPassword" type="text" placeholder="">
+                <select class="form-control">
+                  <option>กัมพูชา</option>
+                  <option>ญี่ปุ่น</option>
+                  <option>โครเอเชีย</option>
+                  <option>ฝรั่งเศส</option>
+                </select>
               </div>
             </div>
           </div>
           <div class="form-group">
             <div class="form-row">
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <label for="exampleConfirmPassword">ตั้งแต่วันที่</label>
-                <input class="form-control" id="exampleConfirmPassword" type="date" placeholder="">
+                <input class="form-control" id="exampleConfirmPassword" type="date" placeholder="" required>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <label for="exampleConfirmPassword">ถึงวันที่</label>
-                <input class="form-control" id="exampleConfirmPassword" type="date" placeholder="">
+                <input class="form-control" id="exampleConfirmPassword" type="date" placeholder="" required>
+              </div>
+              <div class="col-md-4">
+                <label for="exampleConfirmPassword">จำนวนกี่วัน</label>
+                <input class="form-control" id="exampleConfirmPassword" type="number" placeholder="" required>
               </div>
             </div>
           </div>
@@ -347,16 +356,30 @@
               <div class="col-md-12">
                 <label for="exampleConfirmPassword">งบประมาณ</label>
                 <br>
-                <input id="exampleConfirmPassword" type="radio" placeholder="" name="dd" value="" onclick="show1();">
+                <input id="exampleConfirmPassword" type="radio" placeholder="" name="dd" value="" onclick="show1();" required>
                 <label for="exampleConfirmPassword">งบประมาณส่วนตัว </label>
-                <input id="exampleConfirmPassword" type="radio" placeholder="" name="dd" value="" onclick="show2();">
+                <input id="exampleConfirmPassword" type="radio" placeholder="" name="dd" value="" onclick="show2();" required>
                 <label for="exampleConfirmPassword">งบประมาณภายนอกมหาวิทยาลัย</label>
               </div>
             </div>
           </div>
 
           <div id="div1">
+          <div class="form-group">
+              <label for="exampleConfirmPassword">1.ค่าใช้จ่ายในประเทศ</label>
+              <div class="form-row">
+                <div class="col-md-6">
+                  <label for="exampleConfirmPassword">ค่าเบี้ยเลี้ยง</label>
+                  <input class="form-control" id="exampleConfirmPassword" type="text" placeholder="">
+                </div>
+                <div class="col-md-6">
+                  <label for="exampleConfirmPassword">ค่าที่พัก</label>
+                  <input class="form-control" id="exampleConfirmPassword" type="text" placeholder="">
+                </div>
+              </div>
+            </div>
             <div class="form-group">
+              <label for="exampleConfirmPassword">2.ค่าใช้จ่ายในต่างประเทศ</label>
               <div class="form-row">
                 <div class="col-md-6">
                   <label for="exampleConfirmPassword">ค่าเบี้ยเลี้ยง</label>
@@ -384,7 +407,39 @@
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-12">
-                <label for="exampleConfirmPassword">เอกสารที่แนบมาด้วย</label>
+                <label for="exampleConfirmPassword">3.ทั้งนี้ ข้าพเจ้ามีขอความอนุเคราะห์จากกองการเจ้าหน้าที่ สำนักงานอธิการบดี 
+ในการทำเอกสารที่เกี่ยวข้องดังนี้
+</label>
+                <br>
+                <input id="exampleConfirmPassword" type="radio" placeholder="" name="aa" value="" onclick="show3();" required>
+                <label for="exampleConfirmPassword"> ไม่ประสงค์จัดทำเอกสารทั้ง passport และ visa  </label>
+                <input id="exampleConfirmPassword" type="radio" placeholder="" name="aa" value="" onclick="show4();" required>
+                <label for="exampleConfirmPassword"> ประสงค์จัดทำเอกสารดังนี้</label>
+              </div>
+            </div>
+          </div>
+          <div id="div2">
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-12">
+        
+                <input id="exampleConfirmPassword" type="checkbox" placeholder="" name="dd" value="" onclick="show1();">
+                <label for="exampleConfirmPassword">หนังสือเดินทาง (E-Passport)</label>
+                <input id="exampleConfirmPassword" type="checkbox" placeholder="" name="dd" value="" onclick="show2();">
+                <label for="exampleConfirmPassword">ตรวจลงตรา (VISA)</label>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-12">
+                <label for="exampleConfirmPassword">เอกสารที่แนบมาด้วย</label><br>
+                <label for="exampleConfirmPassword"> หนังสือเชิญ / หนังสือตอบรับ หรือโครงการที่ได้รับอนุมัติแล้ว (ต้องมี)</label>
+                <input class="form-control" id="exampleConfirmPassword" type="file" placeholder="">
+                <label for="exampleConfirmPassword">แบบรายงาน การฝึกอบรม/เสนอผลงาน/ดูงาน ณ ต่างประเทศ (ต้องมี)</label>
+                <input class="form-control" id="exampleConfirmPassword" type="file" placeholder="">
+                <label for="exampleConfirmPassword">สำเนาหนังสือเดินทาง (E-Passport) หน้าแรก (กรณีขอหนังสือ ขออำนวยความสะดวกในการตรวจลงตรา (VISA))</label>
                 <input class="form-control" id="exampleConfirmPassword" type="file" placeholder="">
               </div>
             </div>
@@ -432,6 +487,15 @@
       }
       function show2() {
         document.getElementById('div1').style.display = 'block';
+      }
+    </script>
+
+     <script>
+      function show3() {
+        document.getElementById('div2').style.display = 'none';
+      }
+      function show4() {
+        document.getElementById('div2').style.display = 'block';
       }
     </script>
     <?php require_once 'views/layout/footer.php';
